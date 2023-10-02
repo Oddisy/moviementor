@@ -3,7 +3,7 @@ import Form from "../form/signup";
 
 function Container() {
 	return (
-		<div className="bg-bgContainer h-screen bg-cover w-full">
+		<div className=" bg-[url('./src/assets/bgcontainer.png')] h-screen bg-cover w-full">
 			<div className="bg-black h-screen bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex hidden items-center justify-center h-screen w-full md:w-1/2">
@@ -24,7 +24,7 @@ function Container() {
 
 				{/* Right Side - Signup Form */}
 				<div className="w-full md:w-[50%] flex items-center flex-col justify-center">
-					<div className="text-4xl md:text-6xl text-[#ff1717] text-center mb-8">
+					<div className="text-4xl md:text-6xl  text-[#ff1717] text-center mb-8">
 						SIGNUP
 					</div>
 					{/* Form section */}
