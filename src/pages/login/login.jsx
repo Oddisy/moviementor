@@ -1,10 +1,12 @@
-import React from 'react'
-import { Container } from '../../components/exports'
+import React from "react";
+import {SignUp} from "../../components/exports";
 
 function Login() {
-  return (
-    <div><Container/></div>
-  )
+	return (
+		<div>
+			<Container />
+		</div>
+	);
 }
 
-export default Login
+export default Login;

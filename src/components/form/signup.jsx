@@ -7,7 +7,8 @@ import {
 } from "../../redux/authSlice";
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-hot-toast";
-function Form() {
+import Input from "../input/input";
+function SignUpForm() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	// const userInfo = useSelector((state) => state.auth);
@@ -51,43 +52,39 @@ function Form() {
 	return (
 		<>
 			{loading && (
-				<div className="absolute top-0 left-0 w-full h-screen bg-black/30 flex items-center">
+				<div className="absolute top-0 left-0 w-full h-[1050px] md:h-screen lg:h-screen bg-black/30 flex items-center">
 					<p className="text-white text-center">
 						wait while we create an account for you...
 					</p>
 				</div>
 			)}
-			<div className="flex p-[20px] lg:p-0 w-full flex-col gap-8 ">
+			<div className="flex p-[20px] lg:p-0 w-[80%] flex-col gap-8 ">
 				<label htmlFor="text">
-					<input
-						className="pl-4 w-full rounded-3xl focus:outline-none focus:border-none py-2 px-4 text-[#5C5C5C]"
+					<Input
 						value={userName}
 						onChange={(e) => setUserName(e.target.value)}
 						type="text"
 						placeholder="NAME"
 					/>
 				</label>
-				<label htmlFor="emaissl">
-					<input
-						className="pl-4 w-full rounded-3xl focus:outline-none focus:border-none py-2 px-4 text-[#5C5C5C] "
+				<label htmlFor="email">
+					<Input
 						value={emailAddress}
 						onChange={(e) => setEmailAddress(e.target.value)}
 						type="email"
 						placeholder="EMAIL"
 					/>
 				</label>
-				<label htmlFor="">
-					<input
-						className="pl-4 w-full focus:outline-none focus:border-none rounded-3xl py-2 px-4 text-[#5C5C5C]"
+				<label htmlFor="password">
+					<Input
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						type="password"
 						placeholder="PASSWORD"
 					/>
 				</label>
-				<label htmlFor="password">
-					<input
-						className="pl-4 w-full focus:outline-none focus:border-none rounded-3xl py-2 px-4 text-[#5C5C5C]"
+				<label htmlFor="confirmPassword">
+					<Input
 						value={confirmPassword}
 						onChange={(e) => setConfirmPassword(e.target.value)}
 						type="password"
@@ -107,4 +104,4 @@ function Form() {
 	);
 }
 
-export default Form;
+export default SignUpForm;
