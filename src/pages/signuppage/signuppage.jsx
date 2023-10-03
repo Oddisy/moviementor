@@ -6,13 +6,9 @@ function SignUpContainer() {
 			<div className="bg-black h-screen bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center h-screen w-full md:w-1/2">
-					<div className="h-[80vh] w-[80%]   text-white text-center">
-						<div className="animate-pulse transition-transform duration-1000 w-full ">
-							<img
-								className="w-[37.6rem] mx-auto h-[24.8rem]"
-								src={logo}
-								alt="logo"
-							/>
+					<div className=" ml-10 flex justify-center flex-col  h-[80vh] w-[80%] text-white">
+						<div className=" animate-pulse  transition-transform duration-[0.5s] ">
+							<img className="  w-[37.6rem] h-[24.8rem]" src={logo} alt="" />
 						</div>
 						<div className=" mt-10">
 							<h1 className="text-3xl md:text-5xl">HOME OF MOVIES</h1>
