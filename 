@@ -1,0 +1,72 @@
+[33mcommit 29c4744ce84ec9bdcc284b7471b48f9e59bdeefb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Oddisy <odunayoogunleye200@gmail.com>
+Date:   Wed Oct 4 00:06:19 2023 +0100
+
+    added some css
+
+[33mcommit 82d880e2124be9a423752a2f385f1d5f76e297fe[m
+Author: Oddisy <odunayoogunleye200@gmail.com>
+Date:   Tue Oct 3 23:56:59 2023 +0100
+
+    made input component an atom and reusable, login page modified
+
+[33mcommit d9f086098c370fe48d74fac51be278efaaefabfe[m
+Merge: db6b4e2 e24a09a
+Author: Oddisy <odunayoogunleye200@gmail.com>
+Date:   Mon Oct 2 22:39:53 2023 +0100
+
+    Merge branch 'master' of https://github.com/Oddisy/moviementor
+
+[33mcommit db6b4e24b18be0b29c20b63a6cdea37780f42dc2[m
+Author: Oddisy <odunayoogunleye200@gmail.com>
+Date:   Mon Oct 2 22:39:07 2023 +0100
+
+    background image fix
+
+[33mcommit e24a09a70c2b504a0b7ea8e98c296e952218f730[m
+Merge: 20f4beb be0726e
+Author: Oddisy <101340872+Oddisy@users.noreply.github.com>
+Date:   Mon Oct 2 21:46:50 2023 +0100
+
+    Merge pull request #2 from Oxygene1/master
+    
+    login screen beautified
+
+[33mcommit 20f4beb1c6834f88b96c8dba53541952b7e06249[m
+Author: Oddisy <odunayoogunleye200@gmail.com>
+Date:   Mon Oct 2 21:41:52 2023 +0100
+
+    signup page fully responsive
+
+[33mcommit be0726e26eb8f386377ee17640dd2897078b0021[m
+Author: Abdulganiyu Ibrahim <97368641+Oxygene1@users.noreply.github.com>
+Date:   Mon Oct 2 21:29:03 2023 +0100
+
+    login screen beautified
+
+[33mcommit 76078f9bf189edd8f9ad9ed7fa3fb04304ca7df1[m
+Merge: eeece85 2883e6b
+Author: Oddisy <101340872+Oddisy@users.noreply.github.com>
+Date:   Mon Oct 2 20:53:51 2023 +0100
+
+    Merge pull request #1 from Oxygene1/master
+    
+    new update
+
+[33mcommit 2883e6ba272963e54d98e2b9c076e55abab7c136[m
+Author: Abdulganiyu Ibrahim <97368641+Oxygene1@users.noreply.github.com>
+Date:   Mon Oct 2 20:49:58 2023 +0100
+
+    protected routes modified with local storage tokens
+
+[33mcommit 308dbc890073e9b16f2695072948a1e709dc5cf2[m
+Author: Abdulganiyu Ibrahim <97368641+Oxygene1@users.noreply.github.com>
+Date:   Mon Oct 2 20:05:11 2023 +0100
+
+    protected routes added
+
+[33mcommit eeece851614fca72f111050082389150f8c7aebe[m
+Author: Oddisy <odunayoogunleye200@gmail.com>
+Date:   Mon Oct 2 18:21:06 2023 +0100
+
+    authentication for sign up and login created
