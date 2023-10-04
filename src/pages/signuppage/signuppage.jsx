@@ -3,7 +3,7 @@ import SignUpForm from "../../components/form/signup";
 function SignUpContainer() {
 	return (
 		<div className=" bg-[url('./src/assets/bgcontainer.png')] h-[1150px] bg-cover w-full">
-			<div className="bg-black h-screen bg-opacity-70 flex flex-col md:flex-row items-center">
+			<div className="bg-black h-full bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center h-screen w-full md:w-1/2">
 					<div className=" ml-10 mb-16 flex justify-center flex-col h-[55vh] w-[80%] text-white">
