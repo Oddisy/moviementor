@@ -2,11 +2,13 @@ import {backgroundImage, logo} from "../../components/exports";
 import SignUpForm from "../../components/form/signup";
 function SignUpContainer() {
 	// bg-[url('./src/assets/bgcontainer.png')
+	// bg-[url('./src/components/assets/bgcontainer.png')]
+
 	return (
-		<div className="  bg-cover w-full bg-bgContainer">
+		<div className="bg-cover w-full bg-bgContainer">
 			<div className="bg-black h-full bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
-				<div className="lg:flex items-center justify-center h-screen w-full md:w-1/2">
+				<div className="lg:flex items-center justify-center  w-full md:w-1/2">
 					<div className=" ml-10 mb-16 flex justify-center flex-col h-[55vh] w-[80%] text-white">
 						<div className=" animate-pulse  transition-transform duration-[0.5s] ">
 							<img className="  w-[37.6rem] h-[24.8rem]" src={logo} alt="" />
