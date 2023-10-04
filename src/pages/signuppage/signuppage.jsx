@@ -5,11 +5,11 @@ function SignUpContainer() {
 	// bg-[url('./src/components/assets/bgcontainer.png')]
 
 	return (
-		<div className="bg-cover h-[1050px] md:h-[1050px] lg:h-screen w-full bg-bgContainer">
-			<div className="bg-black md:h-[1050px] bg-opacity-70 flex flex-col md:flex-row items-center">
+		<div className="bg-cover md:h-screen lg:h-screen w-full bg-bgContainer">
+			<div className="bg-black sm:h-[900px] md:h-screen bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center  w-full md:w-1/2">
-					<div className=" ml-10 mb-16 flex justify-center flex-col h-[55vh] w-[80%] text-white">
+					<div className=" ml-10 mb-16 md:mb-8 lg:mb-4 flex justify-center flex-col h-[50vh] w-[80%] text-white">
 						<div className=" animate-pulse  transition-transform duration-[0.5s] ">
 							<img className="  w-[37.6rem] h-[24.8rem]" src={logo} alt="" />
 						</div>
