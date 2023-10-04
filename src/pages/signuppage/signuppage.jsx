@@ -5,8 +5,8 @@ function SignUpContainer() {
 	// bg-[url('./src/components/assets/bgcontainer.png')]
 
 	return (
-		<div className="bg-cover h-[1000px] md:h-screen lg:h-screen w-full bg-bgContainer">
-			<div className="bg-black h-full bg-opacity-70 flex flex-col md:flex-row items-center">
+		<div className="bg-cover h-[1050px] md:h-[1050px] lg:h-screen w-full bg-bgContainr">
+			<div className="bg-black md:h-[1050px] bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center  w-full md:w-1/2">
 					<div className=" ml-10 mb-16 flex justify-center flex-col h-[55vh] w-[80%] text-white">
@@ -27,7 +27,7 @@ function SignUpContainer() {
 				</div>
 
 				{/* Right Side - Signup Form */}
-				<div className="w-full md:w-[50%] flex items-center flex-col justify-center">
+				<div className="w-full mt-20 md:w-[50%] flex items-center flex-col justify-center">
 					<div className="text-4xl md:text-6xl  text-[#ff1717] text-center mb-8">
 						SIGNUP
 					</div>
