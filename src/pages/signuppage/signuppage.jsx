@@ -1,8 +1,9 @@
-import {logo} from "../../components/exports";
+import {backgroundImage, logo} from "../../components/exports";
 import SignUpForm from "../../components/form/signup";
 function SignUpContainer() {
+	// bg-[url('./src/assets/bgcontainer.png')
 	return (
-		<div className=" bg-[url('./src/assets/bgcontainer.png')] h-[1150px] bg-cover w-full">
+		<div className="  bg-cover w-full bg-bgContainer">
 			<div className="bg-black h-full bg-opacity-70 flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center h-screen w-full md:w-1/2">
