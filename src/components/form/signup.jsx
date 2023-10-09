@@ -59,7 +59,7 @@ function SignUpForm() {
 					</p>
 				</div>
 			)}
-			<div className="flex p-[20px] lg:p-0 w-[80%] flex-col gap-4 ">
+			<div className="flex p-[20px] lg:p-0 w-[95%] flex-col gap-4 ">
 				<label htmlFor="text">
 					<Input
 						value={userName}

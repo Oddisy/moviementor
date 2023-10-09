@@ -74,7 +74,7 @@ export const LoginScreen = () => {
 							Login
 						</span>
 					</div>
-					<div className="w-[80%]">
+					<div className="w-[90%]">
 						<Login />
 						{/* <Input
 							inputClassName="w-[80%]"

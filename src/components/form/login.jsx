@@ -106,7 +106,7 @@ const Login = () => {
 						</div>
 					) : null}
 				</label>
-				<div className="flex flex-col">
+				<div className="flex w-full flex-col">
 					<div className="flex mb-4 w-full items-center">
 						<span className="border-b-2 border-red-300 text-blue-500 w-[10%] md:w-[20%] lg:w-[40%] "></span>
 						<span className="flex justify-center  text-white text-sm  w-[70%]  md:w-[50%] lg:w-[50%] ">
