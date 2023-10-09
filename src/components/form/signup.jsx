@@ -59,7 +59,7 @@ function SignUpForm() {
 					</p>
 				</div>
 			)}
-			<div className="flex p-[20px] lg:p-0 w-[80%] flex-col gap-8 ">
+			<div className="flex p-[20px] lg:p-0 w-[80%] flex-col gap-4 ">
 				<label htmlFor="text">
 					<Input
 						value={userName}
@@ -94,14 +94,14 @@ function SignUpForm() {
 				</label>
 				<div className="flex flex-col">
 					<div className="flex mb-4 w-full items-baseline">
-						<span className="border-b-2 border-red-300 text-blue-500 w-[5%] md:w-[20%] lg:w-[30%] "></span>
+						<span className="border-b-2 border-red-300 text-blue-500 w-[10%] md:w-[20%] lg:w-[30%] "></span>
 						<span className="flex justify-center  text-white text-sm  w-[90%]  md:w-[50%] lg:w-[50%] ">
 							Already have an account ?{" "}
 							<span className="text-blue-500 ml-2 ">
 								<Link to="/">Login</Link>
 							</span>
 						</span>
-						<span className="border-b-2 border-red-300 text-blue-500 w-[5%] md:w-[20%] lg:w-[30%] "></span>
+						<span className="border-b-2 border-red-300 text-blue-500 w-[10%] md:w-[20%] lg:w-[30%] "></span>
 					</div>
 					<button
 						className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300"
