@@ -45,7 +45,7 @@ export const LoginScreen = () => {
 	};
 
 	return (
-		<div className="bg-[url('./src/assets/bgcontainer.png')] flex h-[1050px] md:h-screen lg:h-screen bg-cover w-full">
+		<div className="bg-bgContainer flex h-[1050px] md:h-screen lg:h-screen bg-cover w-full">
 			{loading && (
 				<div className=" h-[550px] md:h-screen lg:h-screen absolute inset-0 bg-black bg-opacity-[0.9]  flex items-center justify-center">
 					<p className="text-white font-serif font-bold">

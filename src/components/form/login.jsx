@@ -37,8 +37,8 @@ const Login = () => {
 		setLoading(true);
 		try {
 			const postData = {
-				username: username,
-				password: password,
+				username: formik.values.username,
+				password: formik.values.password,
 			};
 			const res = await onLogin(postData);
 			if (res) {
@@ -66,64 +66,62 @@ const Login = () => {
 					<p className="text-white">Please wait while we log you in...</p>
 				</div>
 			)}
-			<div className="flex flex-col gap-4">
-				<label htmlFor="username">
-					<input
-						className="w-full border rounded-3xl px-4 py-2 mb-4"
-						id="username"
-						// value={username}
-						// onChange={(e) => setUsername(e.target.value)}
-						type="text"
-						placeholder="Username"
-						onChange={formik.handleChange}
-						value={formik.values.username}
-						onBlur={formik.handleBlur}
-					/>
-					{formik.touched.username && formik.errors.username ? (
-						<div className="text-red-500 -mt-4 mb-4">
-							{" "}
-							{formik.errors.username}{" "}
-						</div>
-					) : null}
-				</label>
-
-				<label htmlFor="password">
-					<input
-						className="w-full border rounded-3xl px-4 py-2 mb-4"
-						id="password"
-						// value={password}
-						// onChange={(e) => se  tPassword(e.target.value)}
-						type="password"
-						placeholder="Password"
-						onChange={formik.handleChange}
-						value={formik.values.password}
-						onBlur={formik.handleBlur}
-					/>
-					{formik.touched.password && formik.errors.password ? (
-						<div className="text-red-600 -mt-4 mb-4">
-							{" "}
-							{formik.errors.password}{" "}
-						</div>
-					) : null}
-				</label>
-				<div className="flex w-full flex-col">
-					<div className="flex mb-4 w-full items-baseline">
-						<span className="border-b-2 border-red-300 text-blue-500 w-[10%] md:w-[20%] lg:w-[40%] "></span>
-						<span className="flex justify-center  text-white text-sm  w-[70%]  md:w-[50%] lg:w-[50%] ">
-							Don't have an account ?{" "}
-							<span className="text-blue-500 ml-2 ">
-								<Link to="/signup">Sign up</Link>
-							</span>
-						</span>
-						<span className="border-b-2 border-red-300 text-blue-500 w-[10%] md:w-[20%] lg:w-[40%] "></span>
+			<label htmlFor="username">
+				<input
+					className="w-full border rounded-3xl px-4 py-2 mb-4"
+					id="username"
+					// value={username}
+					// onChange={(e) => setUsername(e.target.value)}
+					type="text"
+					placeholder="Username"
+					onChange={formik.handleChange}
+					value={formik.values.username}
+					onBlur={formik.handleBlur}
+				/>
+				{formik.touched.username && formik.errors.username ? (
+					<div className="text-red-500 -mt-4 mb-4">
+						{" "}
+						{formik.errors.username}{" "}
 					</div>
-					<button
-						className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300"
-						onClick={handleLogin}
-					>
-						Sign In
-					</button>
+				) : null}
+			</label>
+
+			<label htmlFor="password">
+				<input
+					className="w-full border rounded-3xl px-4 py-2 mb-4"
+					id="password"
+					// value={password}
+					// onChange={(e) => se  tPassword(e.target.value)}
+					type="password"
+					placeholder="Password"
+					onChange={formik.handleChange}
+					value={formik.values.password}
+					onBlur={formik.handleBlur}
+				/>
+				{formik.touched.password && formik.errors.password ? (
+					<div className="text-red-600 -mt-4 mb-4">
+						{" "}
+						{formik.errors.password}{" "}
+					</div>
+				) : null}
+			</label>
+			<div className="flex flex-col">
+				<div className="flex mb-4 w-full items-center">
+					<span className="border-b-2 border-red-300 text-blue-500 w-[28%] md:w-[20%] lg:w-[40%] "></span>
+					<span className="flex justify-center  text-white text-sm  w-[70%]  md:w-[50%] lg:w-[50%] ">
+						Don't have an account ?{" "}
+						<span className="text-blue-500 ml-2 ">
+							<Link to="/signup">Sign up</Link>
+						</span>
+					</span>
+					<span className="border-b-2 border-red-300 text-blue-500 w-[28%] md:w-[20%] lg:w-[40%] "></span>
 				</div>
+				<button
+					className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300"
+					onClick={handleLogin}
+				>
+					Sign In
+				</button>
 			</div>
 		</form>
 	);
