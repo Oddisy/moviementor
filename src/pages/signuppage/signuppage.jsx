@@ -5,7 +5,7 @@ function SignUpContainer() {
 	// bg-[url('./src/components/assets/bgcontainer.png')]
 
 	return (
-		<div className="bg-cover md:h-screen lg:h-screen w-full bg-[url('./src/assets/bgcontainer.png')] ">
+		<div className="bg-cover md:h-screen lg:h-screen w-full bg-bgContainer">
 			<div className="bg-black sm:h-[900px] md:h-screen bg-opacity-[0.82] flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center  w-full md:w-1/2">
