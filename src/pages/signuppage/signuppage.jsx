@@ -1,4 +1,4 @@
-import {backgroundImage, logo} from "../../components/exports";
+import {logo} from "../../components/exports";
 import SignUpForm from "../../components/form/signup";
 function SignUpContainer() {
 	// bg-[url('./src/assets/bgcontainer.png')
