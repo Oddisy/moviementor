@@ -8,11 +8,11 @@ import {SignUpContainer} from "../components/exports";
 export const Routes = () => {
 	const route = useRoutes([
 		{
-			path: "/",
+			path: "/signup",
 			element: <SignUpContainer />,
 		},
 		{
-			path: "/login",
+			path: "/",
 			element: <LoginScreen />,
 		},
 		{

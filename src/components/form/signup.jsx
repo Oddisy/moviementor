@@ -8,6 +8,7 @@ import {
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-hot-toast";
 import Input from "../input/input";
+import {Link} from "react-router-dom";
 function SignUpForm() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -52,7 +53,7 @@ function SignUpForm() {
 	return (
 		<>
 			{loading && (
-				<div className="absolute top-0 left-0 w-full h-[1050px] md:h-screen lg:h-screen bg-black/30 flex items-center">
+				<div className="absolute top-0 left-0 w-full h-[1050px] md:h-screen lg:h-screen bg-opacity-5 bg-black/30 flex items-center">
 					<p className="text-white text-center">
 						wait while we create an account for you...
 					</p>
@@ -91,12 +92,22 @@ function SignUpForm() {
 						placeholder="CONFIRM PASSWORD"
 					/>
 				</label>
-				<div className="w-full focus:outline-none focus:border-none flex justify-center  ">
+				<div className="flex flex-col">
+					<div className="flex mb-4 w-full items-center">
+						<span className="border-b-2 border-red-300 text-blue-500 w-[15%] md:w-[20%] lg:w-[40%] "></span>
+						<span className="flex justify-center  text-white text-sm  w-[70%]  md:w-[50%] lg:w-[50%] ">
+							Already have an account ?{" "}
+							<span className="text-blue-500 ml-2 ">
+								<Link to="/">Login</Link>
+							</span>
+						</span>
+						<span className="border-b-2 border-red-300 text-blue-500 w-[15%] md:w-[20%] lg:w-[40%] "></span>
+					</div>
 					<button
-						className=" bg-red-500 rounded-2xl px-4 py-1 "
+						className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300"
 						onClick={handleSubmit}
 					>
-						SIGN UP
+						Sign In
 					</button>
 				</div>
 			</div>

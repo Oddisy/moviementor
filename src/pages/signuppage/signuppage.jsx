@@ -6,7 +6,7 @@ function SignUpContainer() {
 
 	return (
 		<div className="bg-cover md:h-screen lg:h-screen w-full bg-bgContainer">
-			<div className="bg-black sm:h-[900px] md:h-screen bg-opacity-70 flex flex-col md:flex-row items-center">
+			<div className="bg-black sm:h-[900px] md:h-screen bg-opacity-[0.82] flex flex-col md:flex-row items-center">
 				{/* Left Side - Image and Text */}
 				<div className="lg:flex items-center justify-center  w-full md:w-1/2">
 					<div className=" ml-10 mb-16 md:mb-8 lg:mb-4 flex justify-center flex-col h-[50vh] w-[80%] text-white">
@@ -27,7 +27,7 @@ function SignUpContainer() {
 				</div>
 
 				{/* Right Side - Signup Form */}
-				<div className="w-full mt-20 md:w-[50%] flex items-center flex-col justify-center">
+				<div className="w-full mt-20 md:w-[50%] lg:w-[70%] flex items-center flex-col justify-center">
 					<div className="text-4xl md:text-6xl  text-[#ff1717] text-center mb-8">
 						SIGNUP
 					</div>
