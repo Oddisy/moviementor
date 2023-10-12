@@ -45,7 +45,7 @@ export const LoginScreen = () => {
 	};
 
 	return (
-		<div className=" bg-[url('./src/assets/bgcontainer.png')]  flex h-[672px] md:h-screen lg:h-screen bg-cover w-full">
+		<div className=" bg-[url('./src/assets/bgcontainer.png')]  flex h-[698px] md:h-screen lg:h-screen bg-cover w-full">
 			{loading && (
 				<div className=" h-[550px] md:h-screen lg:h-screen absolute inset-0 bg-black bg-opacity-[0.9]  flex items-center justify-center">
 					<p className="text-white font-serif font-bold">
@@ -68,7 +68,7 @@ export const LoginScreen = () => {
 						</ul>
 					</div>
 				</div>
-				<div className=" w-[95%] mt-8 md:mt-0 md:w-1/2 lg:w-[80%] flex items-center flex-col">
+				<div className=" w-[95%] mt-16 md:mt-0 md:w-1/2 lg:w-[80%] flex items-center flex-col">
 					<div className="text-4xl md:text-6xl bg-gradient-to-tr  text-[#ff1717] text-center mb-8">
 						<span className="bg-clip-text text-transparent bg-gradient-to-tr from-[#ff5e00] via-red-400 to-red-500">
 							Login
