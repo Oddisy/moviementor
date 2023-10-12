@@ -45,7 +45,7 @@ export const LoginScreen = () => {
 	};
 
 	return (
-		<div className="bg-bgContainer flex h-[1050px] md:h-screen lg:h-screen bg-cover w-full">
+		<div className="bg-[url('./src/assets/bgcontainer.png')]  flex h-[672px] md:h-screen lg:h-screen bg-cover w-full">
 			{loading && (
 				<div className=" h-[550px] md:h-screen lg:h-screen absolute inset-0 bg-black bg-opacity-[0.9]  flex items-center justify-center">
 					<p className="text-white font-serif font-bold">
@@ -55,11 +55,11 @@ export const LoginScreen = () => {
 				</div>
 			)}
 			<div className="bg-black h-full w-full bg-opacity-[0.82]  flex flex-col md:flex-row items-center">
-				<div className=" ml-10 flex justify-center flex-col  h-[80vh] w-[80%] text-white">
+				<div className=" ml-10 flex justify-center flex-col  h-[55vh] w-[80%] text-white">
 					<div className=" animate-pulse  transition-transform duration-[0.5s] ">
-						<img className="  w-[37.6rem] h-[24.8rem]" src={logo} alt="" />
+						<img className="  w-[37.6rem] h-[15.8rem]" src={logo} alt="" />
 					</div>
-					<div className="mt-4 text-white md:mt-8 lg:mt:10">
+					<div className=" text-white md:mt-8 lg:mt:10">
 						<h1 className=" mb-4 text-3xl  md:text-5xl">HOME OF MOVIES</h1>
 						<ul className=" text-gray-300">
 							<li className="list-disc">WATCH MOVIES FOR FREE</li>
@@ -68,7 +68,7 @@ export const LoginScreen = () => {
 						</ul>
 					</div>
 				</div>
-				<div className=" w-[95%] md:w-1/2 lg:w-[80%] flex items-center flex-col">
+				<div className=" w-[95%] mt-8 md:mt-0 md:w-1/2 lg:w-[80%] flex items-center flex-col">
 					<div className="text-4xl md:text-6xl bg-gradient-to-tr  text-[#ff1717] text-center mb-8">
 						<span className="bg-clip-text text-transparent bg-gradient-to-tr from-[#ff5e00] via-red-400 to-red-500">
 							Login

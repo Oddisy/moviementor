@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../input/input";
+import {Link} from "react-router-dom";
 
 function Header() {
 	return (
@@ -9,7 +10,9 @@ function Header() {
 					<span className=" text-2xl text-red-500 font-bold mr-2 lg:text-3xl">
 						MovieMentor
 					</span>{" "}
-					<span className="font-bold text-white mr-2">HOME</span>
+					<Link>
+						<span className="font-bold text-white mr-2">HOME</span>
+					</Link>
 					<select className="border font-bold text-sm outline-none border-white  px-2 bg-transparent rounded-3xl ">
 						<option value="" disabled selected>
 							MOVIES
