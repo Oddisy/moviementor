@@ -1,9 +1,6 @@
 import {logo} from "../../components/exports";
 import SignUpForm from "../../components/form/signup";
 function SignUpContainer() {
-	// bg-[url('./src/assets/bgcontainer.png')
-	// bg-[url('./src/components/assets/bgcontainer.png')]
-
 	return (
 		<div className="bg-cover md:h-screen lg:h-screen w-full bg-bgContainer">
 			<div className="bg-black sm:h-[900px] md:h-screen bg-opacity-[0.82] flex flex-col md:flex-row items-center">
