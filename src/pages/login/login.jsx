@@ -44,7 +44,7 @@ export const LoginScreen = () => {
 	};
 
 	return (
-		<div className=" bg-bgContainer flex h-[1050px] md:h-screen lg:h-screen bg-cover w-full">
+		<div className=" bg-bgcontainer flex h-[1050px] md:h-screen lg:h-screen bg-cover w-full">
 			{loading && (
 				<div className=" h-[550px] md:h-screen lg:h-screen absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center">
 					<p className="text-white font-serif font-bold">

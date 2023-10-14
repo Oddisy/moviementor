@@ -10,7 +10,7 @@ export default {
 				primary: "#FFFFFF",
 			},
 			backgroundImage: {
-				bgContainer: "url(./assets/bgcontainer.png)",
+				bgcontainer: "url(./assets/bgcontainer.png)",
 			},
 		},
 	},
