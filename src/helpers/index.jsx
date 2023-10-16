@@ -1,16 +1,16 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import {useEffect} from "react";
+import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
-export const ProtectedRoute = ({ children }) => {
-  const navigate = useNavigate();
-  const token = useSelector((state) => state.auth.token);
-  const localStorageToken = localStorage.getItem("token");
-  useEffect(() => {
-    if (!localStorageToken) {
-      navigate("/login");
-    }
-  }, []);
+export const ProtectedRoute = ({children}) => {
+	const navigate = useNavigate();
+	const token = useSelector((state) => state.auth.token);
+	const localStorageToken = localStorage.getItem("token");
+	useEffect(() => {
+		if (!localStorageToken) {
+			navigate("/");
+		}
+	}, []);
 
-  return token || localStorageToken ? children : null;
+	return token || localStorageToken ? children : null;
 };

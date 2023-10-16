@@ -26,7 +26,7 @@ function SignUpContainer() {
 				{/* Right Side - Signup Form */}
 				<div className="w-full md:w-[50%] lg:w-[70%] flex items-center flex-col justify-center">
 					<div className="text-4xl md:text-6xl  text-[#ff1717] text-center mb-4">
-						SIGNU
+						SIGNUP
 					</div>
 					{/* Form section */}
 					<SignUpForm />

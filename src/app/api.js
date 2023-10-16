@@ -26,8 +26,18 @@ export const movieApi = createApi({
 				method: "GET",
 			}),
 		}),
+		getMoviesById: builder.query({
+			query: ({id}) => ({
+				url: `${API.MOVIES}/${id}`,
+				method: "GET",
+			}),
+		}),
 	}),
 });
 
-export const {useSignupMutation, useLoginMutation, useGetMoviesQuery} =
-	movieApi;
+export const {
+	useSignupMutation,
+	useLoginMutation,
+	useGetMoviesQuery,
+	useGetMoviesByIdQuery,
+} = movieApi;
