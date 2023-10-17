@@ -6,11 +6,16 @@ export const ProtectedRoute = ({children}) => {
 	const navigate = useNavigate();
 	const token = useSelector((state) => state.auth.token);
 	const localStorageToken = localStorage.getItem("token");
-	useEffect(() => {
+	const handleNavigation = () => {
 		if (!localStorageToken) {
+			// Clear the token from local storage
+			localStorage.removeItem("token");
 			navigate("/");
 		}
-	}, []);
+	};
+	useEffect(() => {
+		handleNavigation();
+	}, [localStorageToken]);
 
 	return token || localStorageToken ? children : null;
 };

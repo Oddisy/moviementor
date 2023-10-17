@@ -9,7 +9,7 @@ export const WelcomePage = () => {
 	const {data, status, isError} = useGetMoviesQuery();
 	console.log(data);
 	return (
-		<div className="bg-blue-700  w-full h-[1050px] p-8  md:h-screen lg:h-screen">
+		<div className="bg-blue-700 mb-8  w-full h-[1050px] p-8  md:h-screen lg:h-screen">
 			<Header />
 			<div>
 				<div className="flex items-start flex-col h-[80vh] w-full">
@@ -38,7 +38,7 @@ export const WelcomePage = () => {
 						</span>
 					</div>
 				</div>
-				<div className="m h-mt-30 grid grid-cols-1 place-items-center md:grid-cols-4  lg:grid-cols-5 py-20 gap-2">
+				<div className="mt-30 flex flex-wrap justify-center w-[100%]  py-20 gap-4">
 					{data?.data?.movies?.map((items) => {
 						return (
 							<div key={items?._id}>
