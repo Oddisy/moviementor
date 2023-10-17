@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/header/header";
 import Button from "../../components/button/button";
 import {useGetMoviesQuery} from "../../app/api";
+import {Link} from "react-router-dom";
 import {Allmovies} from "../../components/exports";
 
 export const WelcomePage = () => {
@@ -37,12 +38,22 @@ export const WelcomePage = () => {
 						</span>
 					</div>
 				</div>
-				<div className=" grid grid-cols-2 place-items-center md:grid-cols-4  lg:grid-cols-5 gap-2">
+				<div className="m h-mt-30 grid grid-cols-1 place-items-center md:grid-cols-4  lg:grid-cols-5 py-20 gap-2">
 					{data?.data?.movies?.map((items) => {
-						console.log(items);
 						return (
 							<div key={items?._id}>
-								<Allmovies />
+								<div>
+									<Link to={`/single-movies/${items?._id}`}>
+										<div
+											className="flex items-end w-[283px] p-4  bg-cover rounded-[68px] h-[383px]"
+											style={{backgroundImage: `url(${items?.portraitImage})`}}
+										>
+											<div className="w-full h-1/3">
+												<h6>{items?.name}</h6>
+											</div>
+										</div>
+									</Link>
+								</div>
 							</div>
 						);
 					})}
