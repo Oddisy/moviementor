@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function Header() {
 	return (
-		<div className="flex flex-col md:flex-row md:items-center">
+		<div className="flex p-8 flex-col md:flex-row md:items-center">
 			<div className="md:w-1/2">
 				<div className="w-full md:w-[70%] flex justify-between items-baseline ">
 					<span className=" text-2xl text-red-500 font-bold mr-2 lg:text-3xl">
@@ -15,7 +15,7 @@ function Header() {
 					</Link>
 					<select
 						value="option1"
-						className="border font-bold text-sm outline-none border-white  px-2 bg-transparent rounded-3xl "
+						className="border text-white  font-bold text-sm outline-none border-white  px-2 bg-transparent rounded-3xl "
 					>
 						<option value="option1">MOVIES</option>
 						<option value="option1">ACTION</option>
@@ -27,7 +27,7 @@ function Header() {
 			<div className="relative w-full md:w-1/2 mt-4 md:mt-0">
 				<Input
 					placeholder="SEARCH"
-					inputClassName="w-full md:w-[526px] pl-4 md:pl-20 text-gray-50 bg-transparent border border-white focus:border-white"
+					inputClassName="w-full md:w-[526px] pl-4 md:pl-20 text-gray-50 bg-transparent border white-border-focus"
 				/>
 			</div>
 		</div>

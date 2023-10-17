@@ -1,19 +1,16 @@
 import React from "react";
 import Header from "../../components/header/header";
 import Button from "../../components/button/button";
-import {useGetMoviesQuery} from "../../app/api";
-import {Link} from "react-router-dom";
+
 import {Allmovies} from "../../components/exports";
 
 export const WelcomePage = () => {
-	const {data, status, isError} = useGetMoviesQuery();
-	console.log(data);
 	return (
-		<div className="bg-blue-700 mb-8  w-full h-[1050px] p-8  md:h-screen lg:h-screen">
+		<div className=" bg-gradient-to-br from-black to-gray-800 w-full h-[790px]  md:h-screen lg:h-screen">
 			<Header />
-			<div>
-				<div className="flex items-start flex-col h-[80vh] w-full">
-					<h1 className="mb-4 mt-24 font-bold text-white text-[3rem] ">
+			<div className="flex flex-col ">
+				<div className="flex px-8 items-start flex-col h-[80vh] w-full">
+					<h1 className="mb-4 mt-8 md:mt-12 lg:mt-20 font-bold text-white text-[3rem] ">
 						INSECURE
 					</h1>
 					<div className="h-[50vh] sm:w-full md:w-1/2 lg:w-1/3 ">
@@ -28,36 +25,18 @@ export const WelcomePage = () => {
 						</p>
 						<span className="flex gap-4">
 							<Button
-								buttonClassName="bg-white px-8 py-2 rounded-3xl hover:bg-[#FFA484] text-sm"
+								buttonClassName="bg-[#FFA470] px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
 								text="DOWNLOAD"
 							/>
 							<Button
-								buttonClassName="bg-white px-8 py-2 rounded-3xl hover:bg-[#FFA484] text-sm"
+								buttonClassName="bg-[#FFA470] px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
 								text="WATCH TRAILER"
 							/>
 						</span>
 					</div>
 				</div>
-				<div className="mt-30 flex flex-wrap justify-center w-[100%]  py-20 gap-4">
-					{data?.data?.movies?.map((items) => {
-						return (
-							<div key={items?._id}>
-								<div>
-									<Link to={`/single-movies/${items?._id}`}>
-										<div
-											className="flex items-end w-[283px] p-4  bg-cover rounded-[68px] h-[383px]"
-											style={{backgroundImage: `url(${items?.portraitImage})`}}
-										>
-											<div className="w-full h-1/3">
-												<h6>{items?.name}</h6>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-						);
-					})}
-				</div>
+				{/* All movies  */}
+				<Allmovies />
 			</div>
 		</div>
 	);
