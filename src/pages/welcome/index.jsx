@@ -6,7 +6,7 @@ import {Allmovies} from "../../components/exports";
 
 export const WelcomePage = () => {
 	return (
-		<div className=" bg-gradient-to-br from-black to-gray-800 w-full h-[790px]  md:h-screen lg:h-screen">
+		<div className=" bg-gradient-to-br from-black to-gray-800 w-full h-[820px]  md:h-screen lg:h-screen">
 			<Header />
 			<div className="flex flex-col ">
 				<div className="flex px-8 items-start flex-col h-[80vh] w-full">
