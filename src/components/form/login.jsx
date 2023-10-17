@@ -118,6 +118,7 @@ const Login = () => {
 
 				<button
 					className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-300"
+					type="submit"
 					onClick={handleLogin}
 				>
 					Sign In

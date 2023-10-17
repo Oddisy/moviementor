@@ -2,12 +2,13 @@ import React from "react";
 import Header from "../../components/header/header";
 import Button from "../../components/button/button";
 import {useGetMoviesQuery} from "../../app/api";
-import {Link} from "react-router-dom";
+import {Allmovies} from "../../components/exports";
 
 export const WelcomePage = () => {
 	const {data, status, isError} = useGetMoviesQuery();
+	console.log(data);
 	return (
-		<div className="bg-blue-500  w-full h-[1050px] p-8  md:h-screen lg:h-screen">
+		<div className="bg-blue-700  w-full h-[1050px] p-8  md:h-screen lg:h-screen">
 			<Header />
 			<div>
 				<div className="flex items-start flex-col h-[80vh] w-full">
@@ -36,21 +37,13 @@ export const WelcomePage = () => {
 						</span>
 					</div>
 				</div>
-				<div>
+				<div className=" grid grid-cols-2 place-items-center md:grid-cols-4  lg:grid-cols-5 gap-2">
 					{data?.data?.movies?.map((items) => {
 						console.log(items);
 						return (
-							<>
-								<div key={items?._id}>
-									<Link
-										to={`/single-movies/${items?._id}`}
-										className="w-full h-[400px]"
-									>
-										<img src={items?.portraitImage} alt="" />
-										<h6>{items?.name}</h6>
-									</Link>
-								</div>
-							</>
+							<div key={items?._id}>
+								<Allmovies />
+							</div>
 						);
 					})}
 				</div>

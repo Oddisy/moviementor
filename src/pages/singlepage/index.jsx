@@ -6,6 +6,5 @@ export const SingleMovie = () => {
 	const {data} = useGetMoviesByIdQuery({
 		id: id,
 	});
-	console.log(data);
-	return <div>index</div>;
+	return <div>illlndex</div>;
 };

@@ -1,6 +1,5 @@
 import {useRoutes} from "react-router-dom";
 import {ProtectedRoute} from "../helpers";
-import Landingpage from "../pages/landingpage/landingpage";
 import {LoginScreen} from "../pages/login";
 import {WelcomePage} from "../pages/welcome";
 import {SignUpContainer} from "../components/exports";

@@ -13,13 +13,14 @@ function Header() {
 					<Link>
 						<span className="font-bold text-white mr-2">HOME</span>
 					</Link>
-					<select className="border font-bold text-sm outline-none border-white  px-2 bg-transparent rounded-3xl ">
-						<option value="" disabled selected>
-							MOVIES
-						</option>
-						<option value="movies">ACTION</option>
-						<option value="movies">HORROR</option>
-						<option value="movies">COMEDY</option>
+					<select
+						value="option1"
+						className="border font-bold text-sm outline-none border-white  px-2 bg-transparent rounded-3xl "
+					>
+						<option value="option1">MOVIES</option>
+						<option value="option1">ACTION</option>
+						<option value="option2">HORROR</option>
+						<option value="option3">COMEDY</option>
 					</select>
 				</div>
 			</div>
