@@ -12,12 +12,12 @@ export const ProtectedRoute = ({children}) => {
 			// Clear the token from local storage
 			localStorage.removeItem("token");
 			dispatch(clearToken());
-			navigate("/signup");
+			navigate("/");
 		}
 	};
 	useEffect(() => {
 		handleNavigation();
-	}, [localStorageToken]);
+	}, [localStorageToken, token]);
 
 	return token || localStorageToken ? children : null;
 };
