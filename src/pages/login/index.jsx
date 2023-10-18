@@ -45,9 +45,9 @@ export const LoginScreen = () => {
 	};
 
 	return (
-		<div className=" bg-bgcontainer flex h-[780px]  md:h-screen lg:h-screen bg-cover w-full">
+		<div className=" bg-bgcontainer flex h-[760px]  md:h-screen lg:h-screen bg-cover w-full">
 			{loading && (
-				<div className=" h-[620px] md:h-screen lg:h-screen absolute inset-0 bg-black bg-opacity-[0.9]  flex items-center justify-center">
+				<div className=" h-[760px] md:h-screen lg:h-screen absolute inset-0 bg-black bg-opacity-[0.9]  flex items-center justify-center">
 					<p className="text-white font-serif font-bold">
 						{" "}
 						Please wait... while we create an account{" "}
@@ -56,7 +56,7 @@ export const LoginScreen = () => {
 			)}
 			<div className="bg-black h-full w-full bg-opacity-[0.82]  flex flex-col md:flex-row items-center">
 				<div className=" ml-10 flex justify-center flex-col  h-[55vh] w-[80%] text-white">
-					<div className=" animate-pulse  transition-transform duration-[0.5s] ">
+					<div className=" animate-pulse mt-4  transition-transform duration-[0.5s] ">
 						<img className="  w-[37.6rem] h-[15.8rem]" src={logo} alt="" />
 					</div>
 					<div className=" text-white md:mt-8 lg:mt:10">
@@ -68,7 +68,7 @@ export const LoginScreen = () => {
 						</ul>
 					</div>
 				</div>
-				<div className=" w-[95%] mt-16 md:mt-0 md:w-1/2 lg:w-[80%] flex items-center flex-col">
+				<div className=" w-[95%] mt-20 md:mt-0 md:w-1/2 lg:w-[80%] flex items-center flex-col">
 					<div className="text-4xl md:text-6xl bg-gradient-to-tr  text-[#ff1717] text-center mb-8">
 						<span className="bg-clip-text text-transparent bg-gradient-to-tr from-[#ff5e00] via-red-400 to-red-500">
 							Login
@@ -76,25 +76,6 @@ export const LoginScreen = () => {
 					</div>
 					<div className="w-[90%]">
 						<Login />
-						{/* <Input
-							inputClassName="w-[80%]"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-							type="text"
-							placeholder="Username"
-						/>
-						<Input
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							type="password"
-							placeholder="Password"
-						/>
-						<button
-							className="w-full bg-red-600  text-white py-2 rounded-3xl hover:bg-red-700 transition duration-300"
-							onClick={handleLogin}
-						>
-							Sign In
-						</button> */}
 					</div>
 				</div>
 			</div>

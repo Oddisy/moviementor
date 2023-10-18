@@ -3,7 +3,7 @@ import {ProtectedRoute} from "../helpers";
 import {LoginScreen} from "../pages/login";
 import {WelcomePage} from "../pages/welcome";
 import {SignUpContainer} from "../components/exports";
-import {SingleMovie} from "../pages/singlepage";
+import {SingleMoviePage} from "../pages/singlemoviepage";
 
 export const Routes = () => {
 	const route = useRoutes([
@@ -27,7 +27,7 @@ export const Routes = () => {
 			path: "/single-movies/:id",
 			element: (
 				<ProtectedRoute>
-					<SingleMovie />
+					<SingleMoviePage />
 				</ProtectedRoute>
 			),
 		},

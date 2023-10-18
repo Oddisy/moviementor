@@ -1,16 +1,18 @@
 import {useEffect} from "react";
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
 export const ProtectedRoute = ({children}) => {
 	const navigate = useNavigate();
 	const token = useSelector((state) => state.auth.token);
 	const localStorageToken = localStorage.getItem("token");
+	const dispatch = useDispatch();
 	const handleNavigation = () => {
-		if (!localStorageToken) {
+		if (!token && !localStorageToken) {
 			// Clear the token from local storage
 			localStorage.removeItem("token");
-			navigate("/");
+			dispatch(clearToken());
+			navigate("/signup");
 		}
 	};
 	useEffect(() => {

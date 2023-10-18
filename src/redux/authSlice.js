@@ -15,6 +15,9 @@ const authSlice = createSlice({
 			state.token = action.payload.token;
 			localStorage.setItem("token", state.token);
 		},
+		clearToken: (state) => {
+			state.token = ""; // Clears the token by setting it to an empty string
+		},
 		// Reducer to set the user's email in the local browser
 		setLoginEmailValues: (state, action) => {
 			state.email = action.payload.email;
