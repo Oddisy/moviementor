@@ -3,6 +3,7 @@ import {useGetMoviesQuery} from "../../app/api";
 import {Link} from "react-router-dom";
 function Mostpopular() {
 	const {data} = useGetMoviesQuery();
+	console.log(data);
 	return (
 		<div>
 			<h2 className="p-4 text-white ml-8 font-semibold">MOST POPULAR</h2>
@@ -13,10 +14,10 @@ function Mostpopular() {
 						<div className="w-full md:w-[283px] lg:w-[283px]" key={items?._id}>
 							<Link to={`/single-movies/${items?._id}`}>
 								<div
-									className="flex items-end w-[90%] md:w-[283px] lg:w-[283px]  mx-auto  bg-cover rounded-[68px] h-[383px] relative cardHover"
+									className="flex items-end w-[90%] md:w-[283px] lg:w-[283px]  mx-auto  bg-cover rounded-[30px] h-[383px] relative "
 									style={{backgroundImage: `url(${items?.portraitImage})`}}
 								>
-									<div className=" flex items-end w-full h-full absolute p-4 rounded-[68px]   top-0 bg-black bg-opacity-30 ">
+									<div className=" flex items-end w-full h-full  cardHover absolute p-4 rounded-[30px]    top-0 bg-black bg-opacity-40 ">
 										<div className="w-full h-1/3 relative  ">
 											<div className="text-white font-bold">
 												<h6>{items?.name}</h6>

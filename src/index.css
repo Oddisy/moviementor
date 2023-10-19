@@ -13,6 +13,9 @@
 		@apply bg-gradient-to-br to-black from-gray-800 w-full h-[820px]  md:h-screen lg:h-screen;
 	}
 	.cardHover {
-		@apply hover:-translate-y-2 transition-all cursor-pointer duration-700;
+		@apply hover:bg-opacity-70  
+	 duration-150 
+	 shadow-md bg-white
+transition-all ease-in-out;
 	}
 }
