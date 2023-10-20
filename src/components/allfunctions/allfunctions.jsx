@@ -19,30 +19,29 @@ export function mapMovie({api, startIndex, endIndex, mappedCard}) {
 			className={cn("flex", {
 				"flex-wrap justify-center gap-8": startIndex !== 8 && endIndex !== 1, // Default style
 				"w-[100%] gap-4 justify-center flex-wrap":
-					startIndex === 8 && endIndex === 11, // Additional style
+					startIndex === 8 && endIndex === 11,
 			})}
 		>
 			{movieList.map((items) => {
 				return (
-					<div className="  w-full md:w-[283px] lg:w-[283px] " key={items._id}>
-						{/*  mapping logic here */}
-						<div key={items?._id}>
-							<Link to={`/single-movies/${items?._id}`}>
-								<div
-									className="flex items-end w-[90%] md:w-[283px] lg:w-[283px]  mx-auto  bg-cover rounded-[30px] h-[383px] relative cardHover"
-									style={{backgroundImage: `url(${items?.portraitImage})`}}
-								>
-									<div className=" flex items-end w-full h-full absolute p-4 rounded-[30px]   top-0 bg-black bg-opacity-30 ">
-										<div className="w-full h-1/3 relative">
-											<div className="text-white  font-bold">
-												<h6>{items?.name}</h6>
-												<span>{items?.releaseYear}</span>
-											</div>
+					<div className="w-full md:w-[283px] lg:w-[283px] p-4" key={items._id}>
+						<Link to={`/single-movies/${items?._id}`}>
+							<div className="bg-gray-900 rounded-lg overflow-hidden  transform hover:scale-105 transition duration-300">
+								<div className="relative">
+									<img
+										className="w-full h-[300px] md:h-[383px] object-cover"
+										src={items?.portraitImage}
+										alt={items?.name}
+									/>
+									<div className="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-80 transition-opacity duration-300">
+										<div className="flex flex-col justify-end h-full p-4 text-white">
+											<h6 className="text-2xl font-semibold">{items?.name}</h6>
+											<span className="text-sm">{items?.releaseYear}</span>
 										</div>
 									</div>
 								</div>
-							</Link>
-						</div>
+							</div>
+						</Link>
 					</div>
 				);
 			})}

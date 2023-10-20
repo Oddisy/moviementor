@@ -1,40 +1,64 @@
 import React, {useRef, useEffect} from "react";
 import {gsap} from "gsap";
-// gsap.registerPlugin();
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import Header from "../../components/header/header";
 import Button from "../../components/button/button";
 // import homeVideo from "../../assets/sea.mp4";
 import {Allmovies} from "../../components/exports";
 
 export const WelcomePage = () => {
+	let container = useRef(null);
 	let insecure = useRef(null);
 	let pText = useRef(null);
 	let btn = useRef(null);
 	useEffect(() => {
-		gsap.to(
+		// Define the animation
+		const trigger = gsap.timeline({
+			scrollTrigger: {
+				trigger: [container],
+				start: "top top", // Adjusted to start at 0%
+				toggleActions: "play none none reverse",
+			},
+		});
+
+		trigger.fromTo(
 			[insecure, pText, btn],
-			1,
+			{opacity: 0, y: "25"},
 			{
 				opacity: 1,
-				y: "-25",
-				stagger: {
-					amount: 0.3,
-				},
-				// scrollTrigger: {
-				// 	trigger: insecure.current, // Use the trigger element
-				// 	start: "top 90%",
-				// 	toggleActions: "play none none reset",
-				// },
-			},
-			"-="
+				y: 0,
+				stagger: 0.3,
+				ease: "power2.out",
+			}
 		);
 	}, []);
+
+	// useEffect(() => {
+	// 	gsap.to(
+	// 		[insecure, pText, btn],
+	// 		1,
+	// 		{
+	// 			opacity: 1,
+	// 			y: "-25",
+	// 			stagger: {
+	// 				amount: 0.3,
+	// 			},
+	// 			// scrollTrigger: {
+	// 			// 	trigger: insecure.current, // Use the trigger element
+	// 			// 	start: "top 90%",
+	// 			// 	toggleActions: "play none none reset",
+	// 			// },
+	// 		},
+	// 		"-="
+	// 	);
+	// }, []);
 	return (
 		<div className=" movieContainerStyle">
 			<Header />
-			<div className="flex flex-col ">
+			<div ref={(el) => (container = el)} className="flex flex-col ">
 				<div className="flex">
-					<div className="flex px-8 items-start flex-col h-[80vh] w-full">
+					<div className="flex px-8 items-start flex-col min-h-[73vh] w-full">
 						<h1
 							ref={(el) => (insecure = el)}
 							className="mb-4 mt-8 md:mt-12 lg:mt-20 font-bold text-white text-[3rem] "
@@ -56,11 +80,11 @@ export const WelcomePage = () => {
 							</p>
 							<span ref={(el) => (btn = el)} className="flex gap-4">
 								<Button
-									buttonClassName="bg-[#FFA470] px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
+									buttonClassName="bg-[#FFA470] flex items-center px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
 									text="DOWNLOAD"
 								/>
 								<Button
-									buttonClassName="bg-[#FFA470] px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
+									buttonClassName="bg-[#FFA470] items-center px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
 									text="WATCH TRAILER"
 								/>
 							</span>
