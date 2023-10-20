@@ -41,41 +41,22 @@ export const WelcomePage = () => {
 		};
 	}, []);
 
-	// useEffect(() => {
-	// 	gsap.to(
-	// 		[insecure, pText, btn],
-	// 		1,
-	// 		{
-	// 			opacity: 1,
-	// 			y: "-25",
-	// 			stagger: {
-	// 				amount: 0.3,
-	// 			},
-	// 			// scrollTrigger: {
-	// 			// 	trigger: insecure.current, // Use the trigger element
-	// 			// 	start: "top 90%",
-	// 			// 	toggleActions: "play none none reset",
-	// 			// },
-	// 		},
-	// 		"-="
-	// 	);
-	// }, []);
 	return (
 		<div ref={(el) => (container = el)} className=" movieContainerStyle">
 			<Header />
 			<div className="flex flex-col ">
 				<div className="flex">
-					<div className="flex opacity-100 px-8 items-start flex-col min-h-[73vh] w-full">
+					<div className="flex px-8 items-start flex-col min-h-[73vh] w-full">
 						<h1
 							ref={(el) => (insecure = el)}
-							className="mb-4 mt-8 md:mt-12 lg:mt-20 font-bold text-white text-[3rem] "
+							className=" opacity-[1] mb-4 mt-8 md:mt-12 lg:mt-20 font-bold text-white text-[3rem] "
 						>
 							INSECURE
 						</h1>
 						<div className="h-[50vh] sm:w-full md:w-1/2 lg:w-1/3 ">
 							<p
 								ref={(el) => (pText = el)}
-								className=" mb-12 text-white text-lg "
+								className=" opacity-[1] mb-12 text-white text-lg "
 							>
 								Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 								Reprehenderit quos numquam doloremque quisquam nulla incidunt
@@ -85,7 +66,10 @@ export const WelcomePage = () => {
 								amet reprehenderit! Maxime commodi blanditiis rem aliquam
 								molestias debitis hic.
 							</p>
-							<span ref={(el) => (btn = el)} className="flex gap-4">
+							<span
+								ref={(el) => (btn = el)}
+								className=" opacity-[1] flex gap-4"
+							>
 								<Button
 									buttonClassName="bg-[#FFA470] flex items-center px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm"
 									text="DOWNLOAD"
