@@ -16,7 +16,7 @@ export const WelcomePage = () => {
 		// Define the animation
 		const trigger = gsap.timeline({
 			scrollTrigger: {
-				trigger: container,
+				trigger: pText,
 				start: "top 0%",
 				toggleActions: "reverse none none play",
 			},
