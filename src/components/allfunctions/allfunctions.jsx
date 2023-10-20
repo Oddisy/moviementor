@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import cn from "classnames";
 
 Link;
 // Define functions
@@ -12,9 +13,16 @@ export function mappedCard() {
 
 // function to map all movies com
 export function mapMovie({api, startIndex, endIndex, mappedCard}) {
+	const movieList = api.slice(startIndex, endIndex); // get the slice of array between 2 indexes (inclusive)
 	return (
-		<div className="flex flex-wrap justify-center gap-4   ">
-			{api.slice(startIndex, endIndex).map((items) => {
+		<div
+			className={cn("flex", {
+				"flex-wrap justify-center gap-8": startIndex !== 8 && endIndex !== 1, // Default style
+				"w-[100%] gap-4 justify-center flex-wrap":
+					startIndex === 8 && endIndex === 11, // Additional style
+			})}
+		>
+			{movieList.map((items) => {
 				return (
 					<div className="  w-full md:w-[283px] lg:w-[283px] " key={items._id}>
 						{/*  mapping logic here */}

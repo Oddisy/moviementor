@@ -1,15 +1,24 @@
 import React from "react";
 import {useGetMoviesQuery} from "../../app/api";
 import {mapMovie} from "../allfunctions/allfunctions";
+import {Link} from "react-router-dom";
 function Newreleases({title}) {
 	const {data, isError, isLoading} = useGetMoviesQuery();
 
 	// If there is an error or the data is loading, display a loading message
 	if (isError || isLoading) {
 		return (
-			<div>
-				<h2 className="p-4 text-white ml-8 font-semibold">NO API</h2>
-				<p>Loading...</p>
+			<div className="absolute top-0 w-full bg-opacity-[0.96] min-h-[900px] bg-black flex flex-col justify-center items-center">
+				<div className="text-center text-lg -mt-40">
+					<h2 className="text-red-500 italic ">session timed out</h2>
+					<span className="text-white">
+						{" "}
+						please
+						<span className="text-blue-500 italic ml-2">
+							<Link to="/">login</Link>{" "}
+						</span>
+					</span>
+				</div>
 			</div>
 		);
 	}

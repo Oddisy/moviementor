@@ -6,9 +6,9 @@ import Newreleases from "../newreleases/newreleases";
 function Allmovies() {
 	return (
 		<div className="bg-gradient-to-b rounded-tl-[2rem] from-gray-800 to-black">
-			<Mostpopular />
+			<Mostpopular title="MOST POPULAR" />
 			<Newreleases title="NEW RELEASES" />
-			<Trending />
+			<Trending title="Trending" />
 		</div>
 	);
 }
