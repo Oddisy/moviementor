@@ -16,9 +16,9 @@ export const WelcomePage = () => {
 		// Define the animation
 		const trigger = gsap.timeline({
 			scrollTrigger: {
-				trigger: [container],
-				start: "top top", // Adjusted to start at 0%
-				toggleActions: "play none none reverse",
+				trigger: container,
+				start: "top 0%",
+				toggleActions: "reverse none none play",
 			},
 		});
 
@@ -32,6 +32,13 @@ export const WelcomePage = () => {
 				ease: "power2.out",
 			}
 		);
+
+		// Cleanup when the component unmounts
+		return () => {
+			if (trigger.scrollTrigger) {
+				trigger.scrollTrigger.kill();
+			}
+		};
 	}, []);
 
 	// useEffect(() => {
@@ -54,11 +61,11 @@ export const WelcomePage = () => {
 	// 	);
 	// }, []);
 	return (
-		<div className=" movieContainerStyle">
+		<div ref={(el) => (container = el)} className=" movieContainerStyle">
 			<Header />
-			<div ref={(el) => (container = el)} className="flex flex-col ">
+			<div className="flex flex-col ">
 				<div className="flex">
-					<div className="flex px-8 items-start flex-col min-h-[73vh] w-full">
+					<div className="flex opacity-100 px-8 items-start flex-col min-h-[73vh] w-full">
 						<h1
 							ref={(el) => (insecure = el)}
 							className="mb-4 mt-8 md:mt-12 lg:mt-20 font-bold text-white text-[3rem] "

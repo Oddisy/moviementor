@@ -6,7 +6,7 @@ import {setUserValues} from "../../redux/authSlice";
 import {useNavigate} from "react-router-dom";
 import {logo} from "../../components/exports";
 import Input from "../../components/input/input";
-import Login from "../../components/form/login";
+import Login from "../../components/form/login/login";
 
 export const LoginScreen = () => {
 	const navigate = useNavigate();
