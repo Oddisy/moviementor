@@ -8,8 +8,8 @@ function Newreleases({title}) {
 	// If there is an error or the data is loading, display a loading message
 	if (isError || isLoading) {
 		return (
-			<div className="absolute top-0 left-0 w-full bg-opacity-[0.96] min-h-[100vh] z-[200]  bg-black flex flex-col justify-center items-center">
-				<div className="text-center text-lg -mt-40">
+			<div className="absolute top-0 left-0 w-full bg-opacity-[0.96] min-h-[100vh] z-[200] overflow-y-hidden  bg-black flex flex-col justify-center items-center">
+				<div className="text-center text-lg -mt-40 ">
 					<h2 className="text-red-500 italic ">session timed out</h2>
 					<span className="text-white">
 						{" "}

@@ -18,8 +18,8 @@ const onSubmit = (values) => {
 };
 
 const validationSchema = Yup.object({
-	username: Yup.string().required("Required!"),
-	password: Yup.string().required("Required!"),
+	username: Yup.string().email().required("Email is Required!"),
+	password: Yup.string().length(8).required("Password is required!"),
 });
 const Login = () => {
 	const navigate = useNavigate();
