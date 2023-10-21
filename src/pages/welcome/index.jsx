@@ -8,9 +8,8 @@ export const WelcomePage = () => {
 		<div className=" movieContainerStyle">
 			<Header />
 			<div className="flex flex-col pt-40 md:pt-24 lg:pt-20 ">
-				<div>
-					<Mainbanner />
-				</div>
+				<Mainbanner />
+
 				{/* All movies  */}
 				<Allmovies />
 			</div>
