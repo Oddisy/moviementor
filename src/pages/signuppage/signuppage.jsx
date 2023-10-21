@@ -1,5 +1,5 @@
 import {logo} from "../../components/exports";
-import SignUpForm from "../../components/form/signup";
+import SignUpForm from "../../components/form/signup/signup";
 function SignUpContainer() {
 	return (
 		<div className="bg-cover md:h-screen lg:h-screen w-full bg-bgcontainer">

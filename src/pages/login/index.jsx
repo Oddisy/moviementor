@@ -54,7 +54,7 @@ export const LoginScreen = () => {
 					</p>
 				</div>
 			)}
-			<div className="bg-black h-full w-full bg-opacity-[0.82]  flex flex-col md:flex-row items-center">
+			<div className="bg-black h-full w-full bg-opacity-[0.85]  flex flex-col md:flex-row items-center">
 				<div className=" ml-10 flex justify-center flex-col  h-[55vh] w-[80%] text-white">
 					<div className=" animate-pulse mt-4  transition-transform duration-[0.5s] ">
 						<img className="  w-[37.6rem] h-[15.8rem]" src={logo} alt="" />

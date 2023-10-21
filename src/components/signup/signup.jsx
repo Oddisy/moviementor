@@ -9,7 +9,7 @@ function SignUp() {
 				<div className="lg:flex flex-col-reverse items-center justify-center h-screen w-full md:w-1/2">
 					<div className=" ml-14 flex justify-center flex-col  h-[80vh] w-[80%] text-white text-center">
 						<div className="flex ">
-							<img className="  w-[37.6rem] h-[24.8rem]" src={logo} alt="" />
+							<img className="w-[37.6rem] h-[24.8rem]" src={logo} alt="" />
 						</div>
 						<div className="mt-5 text-white md:mt-8 lg:mt:10">
 							<h1 className="text-3xl md:text-5xl">HOME OF MOVIES</h1>

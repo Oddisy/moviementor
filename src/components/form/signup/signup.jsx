@@ -1,13 +1,14 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {useSignupMutation} from "../../app/api";
+import {useSignupMutation} from "../../../app/api";
+import "./signup.css";
 import {
 	setLoginEmailValues,
 	setLoginUserNameValues,
-} from "../../redux/authSlice";
+} from "../../../redux/authSlice";
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-hot-toast";
-import Input from "../input/input";
+import Input from "../../input/input";
 import {Link} from "react-router-dom";
 function SignUpForm() {
 	const navigate = useNavigate();
@@ -53,9 +54,10 @@ function SignUpForm() {
 	return (
 		<>
 			{loading && (
-				<div className="absolute top-0 left-0 w-full h-[1050px] md:h-screen lg:h-screen bg-opacity-5 bg-black/30 flex items-center">
-					<p className="text-white text-center">
-						wait while we create an account for you...
+				<div className="loading-container">
+					<div className="loading-ring"></div>
+					<p className="loading-text">
+						Please wait while we create your account
 					</p>
 				</div>
 			)}

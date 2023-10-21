@@ -4,6 +4,7 @@ import {useLoginMutation} from "../../../app/api";
 import {toast} from "react-hot-toast";
 import {setUserValues} from "../../../redux/authSlice";
 import {useNavigate, Link} from "react-router-dom";
+import "./login.css";
 // importing validation library for validations
 import {useFormik} from "formik";
 import * as Yup from "yup";
@@ -61,12 +62,9 @@ const Login = () => {
 	return (
 		<form onSubmit={formik.handleSubmit}>
 			{loading && (
-				<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-					<div className="loading-spinner">
-						<div className="spinner-circle1"></div>
-						<div className="spinner-circle2"></div>
-					</div>
-					<p className="text-white">Please wait while we log you in...</p>
+				<div className="loading-container">
+					<div className="loading-ring"></div>
+					<p className="loading-text">Logging in...</p>
 				</div>
 			)}
 
