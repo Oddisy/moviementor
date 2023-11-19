@@ -17,6 +17,7 @@ const authSlice = createSlice({
 		},
 		clearToken: (state) => {
 			state.token = ""; // Clears the token by setting it to an empty string
+			localStorage.setItem("token", state.token);
 		},
 		// Reducer to set the user's email in the local browser
 		setLoginEmailValues: (state, action) => {
@@ -31,7 +32,11 @@ const authSlice = createSlice({
 	},
 });
 // Export the action creators from the auth slice
-export const {setUserValues, setLoginEmailValues, setLoginUserNameValues} =
-	authSlice.actions;
+export const {
+	setUserValues,
+	setLoginEmailValues,
+	setLoginUserNameValues,
+	clearToken,
+} = authSlice.actions;
 // Export the reducer from the auth slice
 export default authSlice.reducer;

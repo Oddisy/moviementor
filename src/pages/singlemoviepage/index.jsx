@@ -7,7 +7,6 @@ export const SingleMoviePage = () => {
 	const {data} = useGetMoviesByIdQuery({
 		id: id,
 	});
-	console.log(data);
 	return (
 		<div className="movieContainerStyle">
 			<Header />

@@ -45,7 +45,6 @@ const Login = () => {
 				dispatch(
 					setUserValues({
 						token: res.data.token,
-						email: res.data.email,
 						username: res.data.username,
 					})
 				);
@@ -53,8 +52,20 @@ const Login = () => {
 				toast.success(`${res.data.username} ${res.data.message}`);
 			}
 		} catch (err) {
-			console.error("Error logging in:", err);
-			toast.error("There was an error logging in.");
+			console.log(err);
+			// if (err.response) {
+			// 	const errorData = err.response.data;
+			// 	console.log(errorData);
+			// 	if (errorData.error === "Username and Password Mis-Match") {
+			// 		formik.setErrors({username: "Invallid username or password."});
+			// 	} else if (errorData.error === "username_exists") {
+			// 		formik.setErrors({username: "Username already taken."});
+			// 	} else {
+			// 		toast.error("There was an error logging in.");
+			// 	}
+			// } else {
+			// 	toast.error("There was an error logging in.");
+			// }
 		} finally {
 			setLoading(false);
 		}

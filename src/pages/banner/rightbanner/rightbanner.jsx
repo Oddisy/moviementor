@@ -19,7 +19,7 @@ function Rightbanner() {
 		<div className="min-h-[50vh] md:min-h-[70vh] lg:min-h-[80vh] w-full md:w-1/2 p-4">
 			<div className="border h-[60%] md:h-[70%] lg:h-[80%] border-white p-4 shadow-inner rounded-lg">
 				<h2 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-0 md:mt-15 lg:mt-20 text-white font-bold">
-					<span>{text}</span>
+					<span className=" bg-opacity-90">{text}</span>
 					<Cursor
 						cursorBlinking="false"
 						cursorStyle="|"
