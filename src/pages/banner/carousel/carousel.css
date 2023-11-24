@@ -1,0 +1,10 @@
+/* Add CSS for slide transitions */
+.card {
+	opacity: 0;
+	transition: opacity 0.5s ease; /* Define transition properties */
+	background-color: black;
+}
+
+.slick-active .card {
+	opacity: 1;
+}

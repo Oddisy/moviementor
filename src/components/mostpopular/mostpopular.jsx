@@ -17,9 +17,7 @@ function Mostpopular({title}) {
 	return (
 		<div>
 			<h2 className="p-4 text-white ml-8 font-semibold">{title}</h2>
-			<div className=" fleX flex-col flex-wrap  justify-center w-[100%]  py-10 gap-8 md:flex lg:flex">
-				{mappedMovies}
-			</div>
+			<div className=" w-[100%]  py-10 gap-8 flex  ">{mappedMovies}</div>
 		</div>
 	);
 }

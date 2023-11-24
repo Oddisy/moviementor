@@ -20,7 +20,7 @@ transition-all ease-in-out;
 	}
 	.buttonStyle {
 		@apply hover:bg-opacity-70  
-		bg-[#FFA470] items-center px-4 md:px-8 py-2 rounded-3xl hover:bg-[#FFA494] text-sm;
+		bg-[#2d2d88] items-center flex-col  lg:flex-row px-2 md:px-8 py-2 rounded-lg font-bold hover:bg-[#94b0ff] text-[0.7rem]  md:text-sm;
 	}
 	.profileHover {
 		@apply w-full h-8 rounded-lg  hover:border-b-2 border-b-black font-bold hover:bg-slate-300 flex justify-center cursor-pointer;

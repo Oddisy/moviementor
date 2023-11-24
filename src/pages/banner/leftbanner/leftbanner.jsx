@@ -1,10 +1,17 @@
 import React, {useEffect, useRef} from "react";
 import {gsap} from "gsap";
+import alligator from "../../../assets/AlligatorBg.jpg";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Button from "../../../components/button/button";
 gsap.registerPlugin(ScrollTrigger);
 
 function Leftbanner() {
+	const videoUrl = "https://www.youtube.com/watch?v=4_f3-h4tGFQ";
+
+	const openVideo = () => {
+		window.open(videoUrl, "_blank");
+	};
 	let insecure = useRef(null);
 	let pText = useRef(null);
 	let btn = useRef(null);
@@ -35,9 +42,14 @@ function Leftbanner() {
 				trigger.scrollTrigger.kill();
 			}
 		};
-	}, []);
+	}, [insecure, pText, btn]);
 	return (
-		<div className="w-full md:w-1/2 px-4 lg:px-8 flex items-start flex-col min-h-full">
+		<div className="w-full md:w-1/2 px-4 lg:px-8 pt-16 flex items-start flex-col min-h-full">
+			<img
+				src={alligator}
+				className="h-96 w-[40rem] object-cover rounded-lg "
+				alt=""
+			/>
 			<h1
 				ref={(el) => (insecure = el)}
 				className=" mb-4 mt-8 md:mt-12 lg:mt-16 font-bold text-white text-2xl lg:text-5xl"
@@ -47,19 +59,37 @@ function Leftbanner() {
 			<div className="h-[50vh] lg:h-[80vh] mb-0  md:mb-15 lg:mb-20 w-full">
 				<p
 					ref={(el) => (pText = el)}
-					className="font-bold  mb-4 md:mb-8 text-gray-300 text-base md:text-lg"
+					className="font-bold   mb-4 md:mb-8 text-white text-base md:text-lg"
 				>
 					"Alligator" has a dedicated fanbase and is appreciated for its unique
-					approach to the creature feature genre. The film's success led to a
-					sequel, "Alligator II: The Mutation," released in 1991. However, the
-					sequel did not achieve the same level of popularity as the original.
-					"Alligator" remains a cult classic that has endured over the years,
-					and it's often recommended for fans of B-movie horror and creature
-					films.
+					approach to the creature feature genre.
 				</p>
+				<span className="text-white ">
+					2hrs.45m <span>Action Movie</span>
+				</span>
 				<span ref={(el) => (btn = el)} className=" flex gap-4">
-					<Button buttonClassName="buttonStyle" text="DOWNLOAD" />
-					<Button buttonClassName=" buttonStyle " text="WATCH TRAILER" />
+					<span>
+						<Button
+							icon={<PlayCircleIcon className="mr-2" />}
+							buttonClassName="buttonStyle"
+							text="PLAY NOW"
+						/>
+					</span>
+					<span>
+						<Button
+							buttonClassName=" buttonStyle bg-gray-700 "
+							text="WATCH TRAILER"
+							icon={<PlayCircleIcon className="mr-2" />}
+							onClick={openVideo}
+						/>
+					</span>
+					<span>
+						<Button
+							buttonClassName=" buttonStyle bg-transparent border-2 cursor-pointer"
+							text="ADD TO WATCHLIST"
+							icon={<PlayCircleIcon className="mr-2" />}
+						/>
+					</span>
 				</span>
 			</div>
 		</div>

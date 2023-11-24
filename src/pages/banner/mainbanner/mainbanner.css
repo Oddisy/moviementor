@@ -1,3 +1,50 @@
-.main {
-	background-image: url(../../../assets/);
+.carousel {
+	width: 100%;
+	background-size: cover;
+	height: 50rem;
+	color: white;
+	background-image: url("../../../assets/alligatorBgT.jpg");
+	transition: background-position-x 2s ease; /* Transition for smooth slide changes */
+}
+
+/* Add CSS for slide transitions */
+.card {
+	opacity: 0;
+	transition: opacity 0.5s ease; /* Define transition properties */
+	background-color: black;
+}
+
+.slick-active .card {
+	opacity: 1;
+}
+
+.carousel-container {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 73vh; /* Adjust height as needed */
+}
+
+.carousel-wrapper {
+	display: flex;
+	transition: transform 0.5s ease; /* Smooth transition effect */
+	height: 100%;
+}
+
+.carousel-slide {
+	flex: 1 0 100%;
+	opacity: 0;
+	transition: opacity 0.5s ease; /* Opacity transition effect */
+}
+
+.carousel-slide.active {
+	opacity: 1;
+}
+
+/* Add your banner styles, positioning, and other properties here */
+
+@media screen and (max-width: 800px) {
+	.carousel {
+		height: 34rem;
+	}
 }
