@@ -6,32 +6,34 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Button from "../../../components/button/button";
 gsap.registerPlugin(ScrollTrigger);
 
-function Leftbanner() {
-	const videoUrl = "https://www.youtube.com/watch?v=4_f3-h4tGFQ";
-
-	const openVideo = () => {
-		window.open(videoUrl, "_blank");
+function Leftbanner({item, activeIndex}) {
+	const trailerUrl = item.trailerUrl;
+	console.log(trailerUrl);
+	const openTrailerVideo = () => {
+		window.open(trailerUrl, "_blank");
 	};
 	let insecure = useRef(null);
 	let pText = useRef(null);
+	let Image = useRef(null);
 	let btn = useRef(null);
+	let time = useRef(null);
 	useEffect(() => {
 		// Define the animation
 		const trigger = gsap.timeline({
 			scrollTrigger: {
-				trigger: pText,
-				start: "top 0%",
-				toggleActions: "reverse none none play",
+				trigger: Image,
+				start: "bottom 0%",
+				toggleActions: "play none none reverse",
 			},
 		});
 
 		trigger.fromTo(
-			[insecure, pText, btn],
-			{opacity: 0, y: "25"},
+			[insecure, pText, btn, time],
+			{opacity: 1, y: "25"},
 			{
-				opacity: 1,
-				y: 0,
-				stagger: 0.4,
+				opacity: 0,
+				y: 10,
+				stagger: 0.2,
 				ease: "power2.out",
 			}
 		);
@@ -42,51 +44,54 @@ function Leftbanner() {
 				trigger.scrollTrigger.kill();
 			}
 		};
-	}, [insecure, pText, btn]);
+	}, [activeIndex]);
 	return (
 		<div className="w-full md:w-1/2 px-4 lg:px-8 pt-16 flex items-start flex-col min-h-full">
 			<img
-				src={alligator}
-				className="h-96 w-[40rem] object-cover rounded-lg "
+				ref={(el) => (Image = el)}
+				src={item.image}
+				className="h-96  w-[40rem] object-cover rounded-lg "
 				alt=""
 			/>
 			<h1
 				ref={(el) => (insecure = el)}
-				className=" mb-4 mt-8 md:mt-12 lg:mt-16 font-bold text-white text-2xl lg:text-5xl"
+				className=" mb-4 mt-8 md:mt-4 lg:mt-0 font-bold text-white text-2xl lg:text-5xl"
 			>
-				Aligator
+				{item.title}
 			</h1>
 			<div className="h-[50vh] lg:h-[80vh] mb-0  md:mb-15 lg:mb-20 w-full">
 				<p
 					ref={(el) => (pText = el)}
 					className="font-bold   mb-4 md:mb-8 text-white text-base md:text-lg"
 				>
-					"Alligator" has a dedicated fanbase and is appreciated for its unique
-					approach to the creature feature genre.
+					{item.description}
 				</p>
-				<span className="text-white ">
-					2hrs.45m <span>Action Movie</span>
+				<span ref={(el) => (time = el)} className="text-white ">
+					{item.time} <span>{item.movieType} Movie</span>
 				</span>
 				<span ref={(el) => (btn = el)} className=" flex gap-4">
 					<span>
 						<Button
 							icon={<PlayCircleIcon className="mr-2" />}
-							buttonClassName="buttonStyle"
-							text="PLAY NOW"
+							buttonClassName="buttonStyle
+							hover:bg-blue-900"
+							text={item.buttonPlay}
 						/>
 					</span>
 					<span>
 						<Button
-							buttonClassName=" buttonStyle bg-gray-700 "
-							text="WATCH TRAILER"
+							buttonClassName=" buttonStyle hover:bg-gray-900 bg-gray-700 "
+							text={item.buttonTrailer}
 							icon={<PlayCircleIcon className="mr-2" />}
-							onClick={openVideo}
+							onClick={openTrailerVideo}
 						/>
 					</span>
 					<span>
 						<Button
-							buttonClassName=" buttonStyle bg-transparent border-2 cursor-pointer"
-							text="ADD TO WATCHLIST"
+							buttonClassName=" buttonStyle hover:bg-transparent hover:text-blue-500
+							hover:border-blue-500
+							 bg-transparent border-2 cursor-pointer"
+							text={item.buttonWatch}
 							icon={<PlayCircleIcon className="mr-2" />}
 						/>
 					</span>

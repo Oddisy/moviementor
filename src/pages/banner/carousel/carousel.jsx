@@ -1,60 +1,44 @@
-import React, {useState, useEffect} from "react";
-import "./mainbanner.css";
-import Leftbanner from "../leftbanner/leftbanner";
-import Rightbanner from "../rightbanner/rightbanner";
+import React, {useState} from "react";
+import CarouselItem from "./CarouselItem";
 
-function Mainbanner() {
-	const [currentIndex, setCurrentIndex] = useState(0);
-
-	// Define your banners here or fetch them from an array or API
-	const banners = [
+function Carousel() {
+	const [activeIndex, setActiveIndex] = useState(0);
+	const Items = [
 		{
-			Left: <Leftbanner className="w-full md:w-1/2" />,
-			Right: <Rightbanner className="w-full md:w-1/2" />,
+			title: "Baseball",
+			description: "Basefknvkjsfbnjnsdfjkbnjdfjbgkjndf",
 		},
 		{
-			Left: <Leftbanner className="w-full md:w-1/2" />,
-			Right: <Rightbanner className="w-full md:w-1/2" />,
+			title: "tennisball",
+			description: "Basefknvkjsfbnjnsdfjkbnjdfjbgkjndf",
 		},
-		// Add more banner objects as needed
+		{
+			title: "volleyball",
+			description: "Basefknvkjsfbnjnsdfjkbnjdfjbgkjndf",
+		},
 	];
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			// Increment the index to display the next banner
-			setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
-		}, 5000); // Change banners every 5 seconds (adjust as needed)
+	const updateIndex = (newIndex) => {
+		if (newIndex < 0) {
+			newIndex = 0;
+		} else if (newIndex >= items.length) {
+			newIndex = items.length - 1;
+		}
 
-		return () => clearInterval(interval);
-	}, [banners.length]);
+		setActiveIndex(newIndex);
+	};
 
 	return (
-		<div className="mainbanner">
-			<div className="relative flex flex-col md:flex-row lg:min-h-[73vh] carousel">
-				<div className="bg-black w-full bg-opacity-50 absolute h-full"></div>
-				<div className="banner-container">
-					<div
-						className="banner-left"
-						style={{
-							opacity: currentIndex === 0 ? 1 : 0,
-							transition: "opacity 1s ease-in-out",
-						}}
-					>
-						{banners[currentIndex].Left}
-					</div>
-					<div
-						className="banner-right"
-						style={{
-							opacity: currentIndex === 0 ? 1 : 0,
-							transition: "opacity 1s ease-in-out",
-						}}
-					>
-						{banners[currentIndex].Right}
-					</div>
-				</div>
-			</div>
+		<div className="w-full flex flex-col items-center h-28 bg-red-500">
+			<div
+				style={{transform: `translate(-${activeIndex * 100}%)`}}
+				className="inner"
+			></div>
+			{Items.map((item) => {
+				return <CarouselItem className="carousel-item" item={item} />;
+			})}
 		</div>
 	);
 }
 
-export default Mainbanner;
+export default Carousel;

@@ -1,10 +1,12 @@
-/* Add CSS for slide transitions */
-.card {
-	opacity: 0;
-	transition: opacity 0.5s ease; /* Define transition properties */
-	background-color: black;
+.inner {
+	white-space: nowrap;
+	transition: transform 0.3s;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
-
-.slick-active .card {
-	opacity: 1;
+.carousel-item {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 490px;
+	background-color: white;
 }
