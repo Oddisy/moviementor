@@ -1,14 +1,13 @@
 import React, {useEffect, useRef} from "react";
 import {gsap} from "gsap";
-import alligator from "../../../assets/AlligatorBg.jpg";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Button from "../../../components/button/button";
 gsap.registerPlugin(ScrollTrigger);
 
 function Leftbanner({item, activeIndex}) {
+	console.log(activeIndex);
 	const trailerUrl = item.trailerUrl;
-	console.log(trailerUrl);
 	const openTrailerVideo = () => {
 		window.open(trailerUrl, "_blank");
 	};

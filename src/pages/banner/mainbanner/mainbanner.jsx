@@ -10,6 +10,7 @@ import Rightbanner from "../rightbanner/rightbanner";
 
 function Mainbanner() {
 	const [activeIndex, setActiveIndex] = useState(0);
+	console.log(activeIndex);
 	const items = [
 		{
 			title: "Alligator",
@@ -156,6 +157,7 @@ function Mainbanner() {
 							backgroundSize: "cover",
 						}}
 					>
+						{console.log(activeIndex)}
 						<div className="bg-black w-full bg-opacity-50 absolute h-full"></div>
 
 						<Leftbanner

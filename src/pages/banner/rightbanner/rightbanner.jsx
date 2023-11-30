@@ -1,14 +1,33 @@
-import React from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import {Cursor, useTypewriter} from "react-simple-typewriter";
 
 function Rightbanner({item, activeIndex}) {
+	console.log(activeIndex);
+
+	const [words, setWords] = useState(item.words);
+	const [typing, setTyping] = useState(true);
+
+	const handleTyping = useCallback(() => {
+		setTyping(true);
+		setTimeout(() => {
+			setTyping(false);
+		}, 4000);
+	}, []);
+
+	useEffect(() => {
+		setWords(item.words);
+		handleTyping();
+	}, [item.words, handleTyping]);
+
 	const [text] = useTypewriter({
-		words: item.words,
+		words: words,
 		loop: true,
 		typeSpeed: 80,
 		deleteSpeed: 20,
 		delaySpeed: 4000,
+		typing: typing,
 	});
+
 	return (
 		<div className="min-h-[62vh] lg:absolute lg:right-0  mt-0 lg:mt-12  md:min-h-[70vh] lg:min-h-[80vh] w-full md:w-1/2 lg:w-1/2 p-4">
 			<div className="border h-[60%] md:h-[70%] lg:h-[80%] border-white p-4 shadow-inner rounded-lg">
