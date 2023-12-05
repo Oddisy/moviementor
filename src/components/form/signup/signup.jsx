@@ -38,10 +38,6 @@ function SignUpForm() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	// const userInfo = useSelector((state) => state.auth);
-	const [userName, setUserName] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirmPassword, setConfirmPassword] = useState("");
-	const [emailAddress, setEmailAddress] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [onSignup] = useSignupMutation();
 	const formik = useFormik({
@@ -51,10 +47,10 @@ function SignUpForm() {
 	const handleSubmit = async () => {
 		setLoading(true);
 		const postData = {
-			username: formik.values.userName,
-			confirmPassword: formik.value.confirmPassword,
-			emailAddress: formik.value.emailAddress,
-			password: formik.value.password,
+			username: formik.values.username,
+			confirmPassword: formik.values.confirmPassword,
+			emailAddress: formik.values.emailAddress,
+			password: formik.values.password,
 		};
 		try {
 			const res = await onSignup(postData);
@@ -91,38 +87,60 @@ function SignUpForm() {
 			)}
 			<div className="flex p-[20px] lg:p-0 w-[95%] flex-col gap-4 ">
 				<label htmlFor="text">
+					x{" "}
 					<Input
 						value={formik.values.username}
-						onBlur={formik.handleBlur}
-						onChange={formik.handleChange}
+						onBlur={formik.handleBlur("username")}
+						onChange={formik.handleChange("username")}
 						type="text"
-						placeholder="NAME"
+						placeholder="username"
 					/>
+					{formik.touched.username && formik.errors.username ? (
+						<div className="text-red-700 text-[0.8rem] italic  -mt-2">
+							{" "}
+							{formik.errors.username}{" "}
+						</div>
+					) : null}
 				</label>
 				<label htmlFor="email">
 					<Input
-						value={emailAddress}
-						onChange={(e) => setEmailAddress(e.target.value)}
+						value={formik.values.emailaddress}
+						onBlur={formik.handleBlur}
+						onChange={formik.handleChange}
 						type="email"
-						placeholder="EMAIL"
+						placeholder="email"
 					/>
+					{formik.touched.email && formik.errors.email ? (
+						<div className="text-red-700 text-[0.8rem] italic mt-1">
+							{" "}
+							{formik.errors.email}{" "}
+						</div>
+					) : null}
 				</label>
-				<label htmlFor="password">
+				{/* <label htmlFor="password">
 					<Input
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
+						value={formik.values.password}
+						onBlur={formik.handleBlur("password")}
+						// onChange={formik.handleChange("password")}
 						type="password"
-						placeholder="PASSWORD"
+						placeholder="password"
 					/>
-				</label>
-				<label htmlFor="confirmPassword">
+				</label> */}
+				{/* <label htmlFor="confirmPassword">
 					<Input
-						value={confirmPassword}
-						onChange={(e) => setConfirmPassword(e.target.value)}
+						value={formik.values.confirmPassword}
+						onBlur={formik.handleBlur}
+						onChange={formik.handleChange}
 						type="password"
-						placeholder="CONFIRM PASSWORD"
+						placeholder="confirm password"
 					/>
-				</label>
+					{formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+						<div className="text-red-700 text-[0.8rem] italic  mt-1">
+							{" "}
+							{formik.errors.confirmPassword}{" "}
+						</div>
+					) : null}
+				</label> */}
 				<div className="flex flex-col">
 					<div className="flex mb-4 w-full items-baseline">
 						<span className="border-b-2 border-red-300 text-blue-500 w-[13%] md:w-[20%] lg:w-[30%] "></span>
