@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
+import * as Yup from "yup";
 import {useSignupMutation} from "../../../app/api";
 import "./signup.css";
 import {
@@ -11,6 +12,20 @@ import {toast} from "react-hot-toast";
 import Input from "../../input/input";
 import {Link} from "react-router-dom";
 function SignUpForm() {
+	// logic for form validation
+	const validationSchema = Yup.object().shape({
+		username: Yup.string().required("Username is required"),
+		email: Yup.string()
+			.email("Invalid email address.")
+			.required("Email is required."),
+		password: Yup.string()
+			.min(8, "Password must be at least 8 characters.")
+			.required("Password is required."),
+
+		confirmPassword: Yup.string()
+			.oneOf([Yup.ref("password."), null], "Passwords must match.")
+			.required("Please confirm your password."),
+	});
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	// const userInfo = useSelector((state) => state.auth);

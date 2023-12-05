@@ -17,11 +17,14 @@ const onSubmit = (values) => {
 	console.log("form value", values);
 };
 
-const validationSchema = Yup.object({
-	username: Yup.string().email().required("Email is Required!"),
-	password: Yup.string().length(8).required("Password is required!"),
-});
 const Login = () => {
+	const validationSchema = Yup.object().shape({
+		username: Yup.string().required("Username is required"),
+
+		password: Yup.string()
+			.min(8, "Password must be at least 8 characters.")
+			.required("Password is required."),
+	});
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const [loading, setLoading] = useState(false);
