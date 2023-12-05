@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
+import {useFormik} from "formik";
 import * as Yup from "yup";
 import {useSignupMutation} from "../../../app/api";
 import "./signup.css";
@@ -11,6 +12,13 @@ import {useNavigate} from "react-router-dom";
 import {toast} from "react-hot-toast";
 import Input from "../../input/input";
 import {Link} from "react-router-dom";
+const initialValues = {
+	username: "",
+	email: "",
+	password: "",
+	confirmPassword: "",
+};
+
 function SignUpForm() {
 	// logic for form validation
 	const validationSchema = Yup.object().shape({
@@ -26,6 +34,7 @@ function SignUpForm() {
 			.oneOf([Yup.ref("password."), null], "Passwords must match.")
 			.required("Please confirm your password."),
 	});
+	//   validationSchema ends here
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	// const userInfo = useSelector((state) => state.auth);
@@ -35,13 +44,17 @@ function SignUpForm() {
 	const [emailAddress, setEmailAddress] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [onSignup] = useSignupMutation();
+	const formik = useFormik({
+		initialValues,
+		validationSchema,
+	});
 	const handleSubmit = async () => {
 		setLoading(true);
 		const postData = {
-			username: userName,
-			confirmPassword: confirmPassword,
-			emailAddress: emailAddress,
-			password: password,
+			username: formik.values.userName,
+			confirmPassword: formik.value.confirmPassword,
+			emailAddress: formik.value.emailAddress,
+			password: formik.value.password,
 		};
 		try {
 			const res = await onSignup(postData);
@@ -79,8 +92,9 @@ function SignUpForm() {
 			<div className="flex p-[20px] lg:p-0 w-[95%] flex-col gap-4 ">
 				<label htmlFor="text">
 					<Input
-						value={userName}
-						onChange={(e) => setUserName(e.target.value)}
+						value={formik.values.username}
+						onBlur={formik.handleBlur}
+						onChange={formik.handleChange}
 						type="text"
 						placeholder="NAME"
 					/>
