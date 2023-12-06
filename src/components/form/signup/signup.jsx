@@ -12,6 +12,7 @@ import {useNavigate} from "react-router-dom";
 import {toast} from "react-hot-toast";
 import Input from "../../input/input";
 import {Link} from "react-router-dom";
+
 const initialValues = {
 	username: "",
 	email: "",
@@ -96,7 +97,7 @@ function SignUpForm() {
 						placeholder="username"
 					/>
 					{formik.touched.username && formik.errors.username ? (
-						<div className="text-red-700 text-[0.8rem] italic  -mt-2">
+						<div className="text-red-700 text-[0.8rem] italic  mt-1">
 							{" "}
 							{formik.errors.username}{" "}
 						</div>
