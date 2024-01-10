@@ -134,7 +134,7 @@ function Mainbanner() {
 	return (
 		<div className="mainbanner  overflow-hidden">
 			<div
-				className=" relative flex flex-col md:flex-row   lg:min-h-[73vh] carousel"
+				className=" relative flex md:flex-row h-[100vh]   lg:min-h-[73vh] carousel"
 				// style={bannerStyle}
 				style={{
 					display: "inline-flex",
@@ -146,7 +146,7 @@ function Mainbanner() {
 				{items.map((item, index) => (
 					<div
 						key={index}
-						className="flex relative"
+						className="flex relative "
 						style={{
 							// this style made the css item take the full page
 							flex: `0 0 ${100 / items.length}%`,
@@ -158,7 +158,7 @@ function Mainbanner() {
 						}}
 					>
 						{console.log(activeIndex)}
-						<div className="bg-black w-full bg-opacity-50 absolute h-full"></div>
+						<div className="bg-black flex flex-col sm:flex-row w-full bg-opacity-50 absolute h-full"></div>
 
 						<Leftbanner
 							item={item}
